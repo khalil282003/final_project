@@ -1,0 +1,9 @@
+{
+    "development": {
+      "username": "khalilnd",
+      "password": "password",
+      "database": "to_do_app",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }

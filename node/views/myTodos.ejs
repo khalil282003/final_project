@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Todos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>My Todos</h1>
+  <a href="/">All Todos</a>
+  <a href="/logout">Logout</a>
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li>
+        <span><%= todo.title %></span>
+        <a href="/edit/<%= todo.id %>">✏️</a>
+        <form action="/delete" method="POST" style="display: inline;">
+          <input type="hidden" name="id" value="<%= todo.id %>">
+          <button type="submit">🗑️</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="New Todo" required>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>
